@@ -5,9 +5,7 @@
 
 int main()
 {
-    unsigned char relays[] = {0,1,3,7,15,31,63,127,255};
-    unsigned char c = 0;
-    unsigned char d = 1;
+    unsigned char d = 0;
     unsigned char i;
     struct ftdi_context ftdic;
 
@@ -22,17 +20,17 @@ int main()
     }
     ftdi_set_bitmode(&ftdic, 0xFF, BITMODE_BITBANG);
 
-    for(i=0;i<9;i++) {
-	c = relays[i];
-    //    printf("%d\n",d); 
-    //    d |= d<<1;
-    	ftdi_write_data(&ftdic, &c, 1);
-	usleep(200 * 1000);
-    }
+    ftdi_write_data(&ftdic, &d, 1);
     sleep(1);
-    for(i=9;i>0;i--) {
-	c = relays[i-1];
-    	ftdi_write_data(&ftdic, &c, 1);
+    for(i=0;i<8;i++) {
+        printf("%d\n",d); 
+        d |= d<<1;
+    	ftdi_write_data(&ftdic, &d, 1);
 	usleep(200 * 1000);
     }
+    sleep(2);
+    d = 0;
+    ftdi_write_data(&ftdic, &d, 1);
+   
+    return 0;
 }
