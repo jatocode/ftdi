@@ -3,7 +3,11 @@
 Some small code-snippets to access FTDI and bitbang-mode between my RaspberryPI and a Sainsmart 8-channel USB Relay module.
 
 
-## Code Example
+## Binaries
+
+- bitbang: Simple test, turns on all relays and then off again
+- relay: Accepts relay + state or bitmask 
+- ftdi_state: Returns state of relays in form of bitmask
 
 ## Motivation
 
