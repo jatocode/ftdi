@@ -17,3 +17,8 @@ I want to turn relays on/off with my raspberry pi
 
 libftdi-dev is needed for compile and link
 
+## Useful links
+
+http://www.intra2net.com/en/developer/libftdi/
+
+
