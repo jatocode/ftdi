@@ -8,6 +8,7 @@ Some small code-snippets to access FTDI and bitbang-mode between my RaspberryPI 
 - bitbang: Simple test, turns on all relays and then off again
 - relay: Accepts relay + state or bitmask 
 - ftdi_state: Returns state of relays in form of bitmask
+- lm60: Special case for my application. Flips relay 7 on/off with delay between
 
 ## Motivation
 
