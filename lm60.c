@@ -27,17 +27,17 @@ int main(int argc, char *argv[])
     relay = 0;     
     ftdi_read_data(&ftdic, &relay, 1);
 
-    printf("Activating relay %d\n", MOTOR_RELAY);
+//    printf("Activating relay %d\n", MOTOR_RELAY);
     relay |= (1 << portrelay);
-//    ftdi_write_data(&ftdic, &relay, 1);
+    ftdi_write_data(&ftdic, &relay, 1);
 
-    printf("Sleeping for %dms\n", SLEEP_TIME);
+//    printf("Sleeping for %dms\n", SLEEP_TIME);
     usleep(SLEEP_TIME * 1000); // usleep want microsecs 
 
-    printf("Dectivating relay %d\n", MOTOR_RELAY);
+//    printf("Dectivating relay %d\n", MOTOR_RELAY);
     relay &= ~(1 << portrelay);
-//    ftdi_write_data(&ftdic, &relay, 1);
+    ftdi_write_data(&ftdic, &relay, 1);
 
-
+    return 0;
 }
 

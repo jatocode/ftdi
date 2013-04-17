@@ -1,4 +1,4 @@
-all: bitbang relay ftdi_state
+all: bitbang relay ftdi_state lm60
 
 bitbang: bitbang.c
 	gcc bitbang.c -o $@ -lftdi -lusb
