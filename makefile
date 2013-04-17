@@ -8,3 +8,6 @@ relay: relay.c
 
 ftdi_state: ftdi_state.c
 	gcc ftdi_state.c -o $@ -lftdi -lusb
+
+lm60: lm60.c
+	gcc lm60.c -o $@ -lftdi -lusb
